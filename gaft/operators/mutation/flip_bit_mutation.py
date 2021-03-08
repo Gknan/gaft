@@ -8,6 +8,7 @@ from random import random, uniform
 from ...mpiutil import MPIUtil
 from ...plugin_interfaces.operators.mutation import Mutation
 from ...components.binary_individual import BinaryIndividual
+from ...components.my_binary_individual import MyBinaryIndividual
 from ...components.decimal_individual import DecimalIndividual
 
 mpi = MPIUtil()
@@ -45,7 +46,7 @@ class FlipBitMutation(Mutation):
                 if no_flip:
                     continue
 
-                if type(individual) is BinaryIndividual:
+                if type(individual) is BinaryIndividual or type(individual) is MyBinaryIndividual:
                     individual.chromsome[i] = genome^1
                 elif type(individual) is DecimalIndividual:
                     a, b = individual.ranges[i]

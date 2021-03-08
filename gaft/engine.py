@@ -184,6 +184,8 @@ class GAEngine(object):
                     children = self.crossover.cross(*parents)
                     # Mutation.
                     children = [self.mutation.mutate(child, self) for child in children]
+                    # bound_check
+                    children = [child.bound_check() for child in children]
                     # Collect children.
                     local_indvs.extend(children)
 

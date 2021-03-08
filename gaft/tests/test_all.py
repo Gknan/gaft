@@ -19,6 +19,7 @@ from .exponential_ranking_selection_test import ExponentialRankingSelectionTest
 from .linear_scaling_test import LinearScalingTest
 from .dynamic_linear_scaling_test import DynamicLinearScalingTest
 from .flip_bit_big_mutation_test import FlipBitBigMutationTest
+from .my_individual_test import MyIndividualTest
 
 def suite():
     ''' Generate test suite for all test cases in GAFT
@@ -36,7 +37,8 @@ def suite():
         ExponentialRankingSelectionTest,
         LinearScalingTest,
         DynamicLinearScalingTest,
-        FlipBitBigMutationTest
+        FlipBitBigMutationTest,
+        MyIndividualTest
     ]
 
     test_suite = unittest.TestSuite([

@@ -132,6 +132,10 @@ class IndividualBase(object):
         '''
         raise NotImplementedError
 
+    def bound_check(self):
+        ''' 检查边界，若边界溢出，则进行限定 '''
+        return self
+
     def _rand_solution(self):
         ''' Initialize individual solution randomly.
         '''
